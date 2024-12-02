@@ -1,0 +1,141 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Department Information Form</title>
+    <style>
+        /* Basic styles for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .tab-buttons button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-section input, .form-section textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="tab-buttons">
+        <button onclick="showTab(1)">Page 1: Department Overview</button>
+        <button onclick="showTab(2)">Page 2: Team Members and Roles</button>
+        <button onclick="showTab(3)">Page 3: Policies and Procedures</button>
+        <button onclick="showTab(4)">Page 4: Resources and Contact Information</button>
+    </div>
+
+    <div class="tab-content" id="tab-1">
+        <h2>Department Overview</h2>
+        <div class="form-section">
+            <label for="department-name">Department Name:</label>
+            <input type="text" id="department-name" placeholder="Cybersecurity Department">
+        </div>
+        <div class="form-section">
+            <label for="department-objective">Objective:</label>
+            <textarea id="department-objective" placeholder="Outline the department's main goals..."></textarea>
+        </div>
+        <div class="form-section">
+            <label for="department-head">Department Head:</label>
+            <input type="text" id="department-head" placeholder="Name of the department head">
+        </div>
+        <div class="form-section">
+            <label for="department-location">Location:</label>
+            <input type="text" id="department-location" placeholder="Office location and contact details">
+        </div>
+    </div>
+
+    <div class="tab-content" id="tab-2">
+        <h2>Team Members and Roles</h2>
+        <div class="form-section">
+            <label for="team-structure">Team Structure:</label>
+            <textarea id="team-structure" placeholder="List roles within the department..."></textarea>
+        </div>
+        <div class="form-section">
+            <label for="team-members">Team Members:</label>
+            <textarea id="team-members" placeholder="Fill in names, roles, and contact information..."></textarea>
+        </div>
+    </div>
+
+    <div class="tab-content" id="tab-3">
+        <h2>Policies and Procedures</h2>
+        <div class="form-section">
+            <label for="policies">Cybersecurity Policies:</label>
+            <textarea id="policies" placeholder="List your cybersecurity policies..."></textarea>
+        </div>
+        <div class="form-section">
+            <label for="incident-reporting">Incident Reporting Procedures:</label>
+            <textarea id="incident-reporting" placeholder="Steps to report an incident..."></textarea>
+        </div>
+    </div>
+
+    <div class="tab-content" id="tab-4">
+        <h2>Resources and Contact Information</h2>
+        <div class="form-section">
+            <label for="resources">Useful Resources:</label>
+            <textarea id="resources" placeholder="Links to training materials and FAQs..."></textarea>
+        </div>
+        <div class="form-section">
+            <label for="contact-info">Department Contact Information:</label>
+            <textarea id="contact-info" placeholder="General email and emergency contact numbers..."></textarea>
+        </div>
+        <div class="form-section">
+            <label for="feedback">Feedback Section:</label>
+            <textarea id="feedback" placeholder="Space for feedback or suggestions..."></textarea>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle tab switching
+    function showTab(tabNumber) {
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach((tab, index) => {
+            tab.classList.toggle('active', index === tabNumber - 1);
+        });
+    }
+
+    // Show the first tab by default
+    showTab(1);
+</script>
+
+</body>
+</html>
